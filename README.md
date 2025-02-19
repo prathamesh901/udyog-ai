@@ -12,7 +12,7 @@ An AI-powered chatbot platform for **sales and marketing automation**, streamlin
 - **Payment Processing** – Secure transactions via **Stripe**.  
 - **Authentication & Security** – User authentication via **Clerk**.  
 - **Cloud Storage** – Uses **Uploadcare** for media handling.  
-- **Scalable Infrastructure** – Powered by **Neon** (PostgreSQL), **Cloudways**, and **Bun**.
+- **Scalable Infrastructure** – Powered by **Neon** (PostgreSQL), **Cloudways**, and **Bun**.  
 
 ---
 
@@ -37,6 +37,85 @@ The platform’s user interface was designed in **Figma**, ensuring a seamless a
 - **Design & Prototyping:** Figma  
 
 ---
+
+## 🚀 Installation & Setup  
+
+### **Step 1️⃣ Clone the Repository**  
+Open your terminal and run the following command:  
+
+```bash
+git clone https://github.com/prathamesh901/Udyog-AI.git
+cd Udyog-AI
+```
+
+This will download the repository and navigate you to the project folder.  
+
+### **Step 2️⃣ Install Dependencies**  
+Run the following command to install all required dependencies:  
+
+```bash
+npm install
+```
+
+This will install Next.js, Prisma, Clerk, Stripe, Pusher, and other necessary packages.  
+
+### **Step 3️⃣ Set Up Environment Variables**  
+Create a `.env.local` file in the root directory and add the following environment variables:  
+
+```env
+# Database Configuration  
+DATABASE_URL="your_neon_database_url"
+
+# Clerk Authentication  
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="your_clerk_publishable_key"
+CLERK_SECRET_KEY="your_clerk_secret_key"
+
+# Uploadcare Storage  
+UPLOADCARE_PUBLIC_KEY="your_uploadcare_key"
+
+# Stripe Payment Processing  
+STRIPE_SECRET_KEY="your_stripe_secret_key"
+
+# Pusher for Real-Time Updates  
+PUSHER_APP_ID="your_pusher_app_id"
+PUSHER_KEY="your_pusher_key"
+PUSHER_SECRET="your_pusher_secret"
+PUSHER_CLUSTER="your_pusher_cluster"
+```
+
+Replace the placeholder values with your actual API keys from the respective service providers.  
+
+### **Step 4️⃣ Generate Prisma Client**  
+Run the following command to generate the Prisma client:  
+
+```bash
+npx prisma generate
+```
+
+If you have made changes to the database schema, apply migrations by running:  
+
+```bash
+npx prisma migrate dev --name init
+```
+
+This ensures the Prisma schema is updated with the latest database changes.  
+
+### **Step 5️⃣ Start the Development Server**  
+Run the following command to start the project:  
+
+```bash
+npm run dev
+```
+
+By default, the project will be available at `http://localhost:3000`.  
+
+### **Troubleshooting**  
+- If the database connection fails, double-check the `DATABASE_URL` in `.env.local`.  
+- If Prisma does not work, try running `npx prisma generate` again.  
+- If authentication issues occur, verify that Clerk keys are correctly configured.  
+
+---
+
 ## 🔧 Usage Guide  
 
 ### **Admin Panel**  
